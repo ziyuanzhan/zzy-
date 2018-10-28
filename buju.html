@@ -1,0 +1,477 @@
+ <!doctype html>
+ <html>
+       <head>
+       	<meta charset="utf-8">
+       	<title>
+       	</title>
+       	<style>
+        body,span{
+          margin:0px;
+        }
+        ul,h3,h4,{
+          margin:0;
+          padding: 0;
+          list-style: none;
+        }
+        #method-ul{
+          margin-bottom: 0;
+          padding: 0;
+        }
+        .left{
+          margin:0;
+          padding: 0;
+          list-style: none;
+        }
+        #all{
+          width: 1920px;
+          margin:0 auto;
+        }
+          #header{
+            height: 499px;
+            background-image: url(img/header.gif);
+          }
+
+          footer{
+            height: 645px;
+          }
+          #nav{
+            height: 30px;
+            line-height: 30px;
+            display: inline-block;
+            margin-left: 280px;
+            margin-top: 48px;
+          }
+          #center-middle:after,#nav:after{
+            content: "";
+            display: inline-block;
+            clear: both;
+          }
+          #nav li{
+            list-style: none;
+            margin:0;
+            padding: 0;
+            float:left;
+            font-size: 14px;
+            font-family: "微软雅黑";
+            color: #fff;
+            }
+         #themebetter{
+            display: inline-block;
+            font-size: 17px;
+            color: #fff;
+            font-family: "Century Gothic";
+            margin-top: 46px;
+            margin-left: 375px;
+            
+          }
+           #nav #theme{
+            margin-left: 29px;
+            width:123px;
+            background: url(img/jt.gif) no-repeat 111px 14px;
+          }
+          #nav  #pay{
+            margin-left: 32px;
+            width: 73px;
+            background: url(img/jt.gif) no-repeat 62px 14px;
+          }
+           #nav #dz{
+            margin-left: 28px;
+          }
+           #nav #dt{
+            margin-left: 38px;
+          }
+           #nav #jc{
+            margin-left: 45px;
+          }
+           #nav #vip{
+            margin-left: 33px;
+          }
+          #nav #dl{
+            margin-left: 84px;
+            width: 65px;
+            height: 28px;
+            line-height: 28px;
+            text-align: center;
+            border:1px solid #00aaee;
+            border-radius: 15px;
+          }
+          .dec{
+             display:block;
+             width: 1920px;
+             text-align: center;
+          }
+          #zhuti{ 
+            height: 25px;
+            line-height: 25px;
+            font-size: 25px;
+            color: #fff;
+            margin-top: 123px;
+          }
+          #flook{
+            height: 43px;
+            margin-top: 53px;
+            text-align: center;
+          }
+          #look{
+            display: inline-block;
+            height: 43px;
+            width: 160px;
+            text-align: center;
+            line-height: 43px;
+            color: #fff;
+            background-color: #0ae;
+            border-radius: 16px;
+          }
+          #name{
+            height: 12px;
+            line-height: 12px;
+            font-size: 12px;
+            color: #5cc77c;
+            margin-top: 22px;
+          }
+          #gn{
+            height: 15px;
+            line-height: 15px;
+            font-size: 15px;
+            color: #fff;
+            margin-top: 22px;
+
+          }
+           #zc{
+            height: 15px;
+            line-height: 15px;
+            font-size: 15px;
+            color: #fff;
+            margin-top: 6px;
+
+          }
+          #main{
+            width: 1453px;
+            height: 1073px;
+            background-color: #fff;
+            padding-left: 485px;
+          }
+          #content{
+            width: 1170px;
+            height: 1036px;
+          }
+          #fc{
+            width: 100%;
+            height:  1036px;
+            float: left;
+          }
+          #center{
+            height: 1073px;
+            margin-left: 110px;
+            margin-right: 320px;
+          }
+          #left{
+            float: left;
+            width: 110px;
+            height: 1073px;
+            margin-left: -100%;
+          }
+         #right{
+            float: left;
+            width: 320px;
+            height: 1073px;
+            margin-left: -320px;
+          }
+          .left{  
+            width: 90px;
+            height: 38px;
+            line-height: 38px;
+            background-color: #f6f9f2;
+            margin-top: 5px;
+            text-align: center;
+            border-radius: 3px;
+            font-size: 13px;
+            vertical-align: top;
+          }
+          #left-nav1{
+            background-color: #33383c;
+            margin-top: 20px;
+            color: #fff;
+            display: inline-block;
+          }
+          #left-nav4{
+            background-color: #eee;
+          }
+          #sj{
+            height: 0px;
+            width: 0px;
+            display: inline-block;
+            margin-top: 36px;
+            border-left: 3px solid  #33383c;
+            border-right: 3px solid  #fff;
+            border-top: 3px solid  #fff;
+            border-bottom: 3px solid  #fff;
+          }
+          .left-ul{
+            font-size: 0px;
+            padding: 0;
+          }
+          #ewm{
+            height: 108px;
+            width: 88px;
+            border:1px solid #eee;
+            border-radius: 2px;
+            background: url(img/erweima.gif) 7px 7px no-repeat;
+            margin-top: 20px;
+          }
+          #ewm-con{
+            display: inline-block;
+            font-size: 11px;
+            color:#bbbbbb;
+            height: 11px;
+            width:88px;
+            line-height:11px;
+            text-align: center;
+            margin-top: 89px;
+          }
+          #center-con{
+            width: 100%;
+            height: 1013px;
+            margin-top: 20px;
+            border: 1px solid #eee;
+            border-radius: 2px;
+          }
+          #center-top{
+            width: 100%;
+            height: 510px;
+            border-bottom: 1px solid #eee;
+            background:url(img/center.gif) 43px 51px no-repeat;
+          }
+          #center-middle{
+            width: 100%;
+            height: 265px;
+            border-bottom: 1px solid #eee;
+          }
+          .center-pic{
+            width: 40px;
+            height: 33px;
+            border:1px solid #ddd;
+            float: left;
+           margin-top:446px;
+
+          }
+          #tv{
+            background:url(img/tv.gif) 12px 10px no-repeat;
+            margin-left: 324px;
+          }
+          #phone{
+            background:url(img/phone.gif) 14px 8px no-repeat;
+            margin-left: 8px;
+          }
+          .middle-con{
+            width: 234px;
+            height: 103px;
+            border-radius: 2px;
+            border:1px solid #eee;
+            float:left;
+            margin-left: 17px;
+            position: relative;
+          }
+          .div1{
+            margin-left: 0px;
+            border-left: 0;            
+            width: 235px;
+          }
+          .div3{
+            border-right: 0;            
+            width: 235px;
+          }
+          .blue{
+            margin-left: 15px;
+          }
+          .div1-1{
+            margin-top: 20px;
+          }
+          .div1-2{
+            margin-top: 15px;
+          }
+          .son{
+            position: absolute;
+            width:40px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center; 
+            font-size: 12px;
+            background-color: #eee;
+            color: #aaa;
+          }
+          .blue{
+            border-color: #00aaee;
+          }
+          .son-blue{
+             background-color: #00aaee;
+             color: #fff;
+          }
+          .div5{
+            margin-left: 15px;
+          }
+          h4{
+            text-align: center;
+            margin-top: 23px;
+            margin-bottom: 9px;
+          }
+          .descr{
+            display: inline-block;
+            width: 200px;
+            font-size: 12px;
+            color: #aaa;
+            text-align: center;
+            margin-left: 19px;
+          }
+          h3{
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 22px;
+            color: #55595c;
+            font-size: 18px;
+          }
+          #cbt{
+            display: inline-block;
+            font-size: 14px;
+            color: #55595c;
+            margin-left: 29px;
+          }
+          #zhu{
+            display: inline-block;
+            font-size: 14px;
+            color: #55595c;
+            margin-left: 29px;
+            margin-top: 30px;
+          }
+          .method{
+            color: #55595c;
+            font-size: 14px;
+            margin-left: 67px;
+            margin-top: 13px;
+          }
+          #method2{
+            margin-top: 10px;
+          }
+          .mark{
+            color: #0ae;
+            text-decoration: underline;
+          }
+          .mark2{
+            color: #727577;
+            font-size: 12px;
+          }
+       	</style>
+       </head>
+       <body>
+        <div id="all">
+          <header id="header">
+            <div>
+              <span id="themebetter">themebetter</span>
+              <ul id="nav">
+                <li id="index">首页</li>
+                <li id="theme">WordPress主题</li>
+                <li id="pay">付费服务</li>
+                <li id="dz">定制主题</li>
+                <li id="dt">主题动态</li>
+                <li id="jc">教程</li>
+                <li id="vip">会员中心</li>
+                <li id="dl">登录</li>
+              </ul>
+            </div>
+            <span id="zhuti" class="dec">DUX主题</span>
+            <span id="name" class="dec">由themebetter团队原创开发</span>
+            <span class="dec" id="gn">适用于垂直站点、科技博客、个人站、扁平化设计、简洁白色，超多功能配置、会员中心、直达链接、自动缩略图</span>
+            <span class="dec" id="zc">DUX主题适用于WorderPress程序，响应式布局支持电脑、平板和手机的完美展示</span>
+            <div id="flook"><span id="look">查看主题演示站</span></div>
+          </header>
+         <section id="main">
+            <div id="content">
+            <div id="fc">
+              <div id="center">
+                <div id="center-con">
+                  <div id="center-top">
+                    <div id="tv" class="center-pic">
+                      
+                    </div>
+                    <div id="phone" class="center-pic">
+                      
+                    </div>
+                  </div>
+                  <div id="center-middle">
+                    <div class="middle-con div1 div1-1">
+                      <div class="son">亮点1</div>
+                      <h4>自动缩略图</h4>
+                      <span class="descr">自动获取第一张图作为缩略图，还可以自定义缩略图后缀</span> 
+                    </div>
+                    <div class="middle-con blue div1-1">
+                      <div class="son son-blue">亮点2</div>
+                      <h4>副标题</h4>
+                      <span class="descr">完全自定义的文章副标题，让文章展示更具风采</span>
+                    </div>
+                    <div class="middle-con div1-1 div3">
+                      <div class="son">亮点3</div>
+                      <h4>支持HTTPS</h4>
+                      <span class="descr">主题完美支持HTTPS</span>
+                      <span></span>
+                    </div>
+                    <div class="middle-con div1 div1-2">
+                      <div class="son">亮点4</div>
+                       <h4>直达链接</h4>
+                      <span class="descr">在列表页和文章页都有展示，你可以选择开启、是否新窗口</span>
+                    </div>
+                    <div class="middle-con div1-2 div5">
+                      <div class="son ">亮点5</div>
+                       <h4>列表无限加载</h4>
+                      <span class="descr">可以设置无限加载页数和是否开启，列表更有单图展示和无图展示</span>
+                    </div>
+                    <div class="middle-con div1-2 div3">
+                      <div class="son">亮点6</div>
+                       <h4>多平台广告</h4>
+                      <span class="descr">区分手机端和非手机端，可设置不同平台的广告</span>
+                    </div>
+                  </div>
+                  <div id="center-bottom">
+                    <h3>— DUX主题更新方法 —</h3>
+                    <dl>
+                      <span id="cbt">
+                        主题更新方法：
+                      </span>
+                      <ul id="method-ul">
+                        <li id="method1" class="method">
+                          在会员中 — <span class="mark">我的订单</span>中下载主题，解压后得到<span class="mark2">dux</span>文件夹； 
+                        </li>
+                        <li id="method2" class="method">
+                          使用<span class="mark">ftp软件</span>上传 <span class="mark2">dux</span>文件到服务器的 <span class="mark2">wp-content/themes</span> 目录下，替换所有文件即可。
+                        </li>
+                      </ul>
+                      <span id="zhu">
+                        注：使用此方法更新主题会保留网页之前的dux主题设置             
+                      </span>
+                  </div>
+                </div>
+              </div>
+             </div>
+              <div id="left">
+                <ul class="left-ul">
+                  <li class="left" id="left-nav1">主题亮点</li>
+                  <li id="sj"></li>
+                  <li class="left" id="left-nav2">使用说明</li>
+                  <li class="left" id="left-nav3">更新方法</li>
+                  <li class="left" id="left-nav4">授权须知</li>
+                  <li class="left" id="left-nav5">更新记录</li>
+                  <li class="left" id="left-nav6">查看演示</li>
+                  <li class="left" id="left-nav7">售前咨询</li>
+                </ul>
+                <div id="ewm">
+                  <span id="ewm-con">手机扫码演示</span>
+                </div>
+              </div>
+              <div id="right"></div>
+            </div>
+         </section>
+          <footer>
+
+          </footer>
+          </div>
+       </body>
+ </html>

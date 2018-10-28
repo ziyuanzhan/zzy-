@@ -1,0 +1,121 @@
+ <!doctype html>
+ <html>
+       <head>
+       	<meta charset="utf-8">
+       	<title>
+       	</title>
+        <style type="text/css">
+          #main{
+            width: 280px;
+            height: 588px;
+            background:url(img/phone1.gif);
+            position: relative;
+          }
+          #text{
+            width: 218px;
+            height: 359px;
+            position:absolute;
+            top: 86px;
+            left: 24px;
+            border-bottom: 2px solid #ccd9d3;
+            overflow-y: auto ;
+            padding-left: 13px;
+            padding-right: 5px;
+            padding-top:10px; 
+          }
+          #look{
+            text-decoration: none;
+            position:absolute; 
+            width: 30px;
+            height: 34px;
+            border:1px solid #dfd8e6;
+            border-radius: 5px;
+            top:463px;
+            left: 27px;
+            
+          }
+          textarea{
+            width: 140px;
+            height: 34px;
+            line-height: 34px;
+            outline: none;
+            position: absolute;
+            border:1px solid #dfd8e6;
+            border-radius: 5px;
+            top:463px;
+            left: 63px;
+            padding: 0;
+            resize: none;
+            font-size: 25px;
+          }
+          #send{
+            font-size: 20px;
+            color: #99969e;
+            letter-spacing: 1px;
+            line-height: 34px;
+            height: 34px;
+            width: 54px;
+            position:absolute;
+            top: 463px;
+            left:205px;
+            text-align:center;
+            font-family:"微软雅黑";
+            font-weight: bold;
+            cursor: pointer;
+          }
+          img{
+            margin-top: 5px;
+            margin-left: 2px;
+          }
+          p{
+            marin:0;
+          }
+          .clear:after{
+            content: "";
+            clear: both;
+            display: block;
+          }
+        </style>
+        <script>
+          window.onload=function(){
+            var oNoff=true;
+            var oLook=document.getElementById("look");
+            var oText=document.getElementById("text");
+            var oInp=document.getElementById("inp");
+            var oSend=document.getElementById("send");
+            var oImg=document.getElementsByTagName("img");
+            oLook.onclick=function(){
+              if(oNoff){
+                oNoff=false;
+                oImg[0].src="img/soldier.gif";
+              }
+              else{
+                oNoff=true;
+                oImg[0].src="img/cool.gif";
+              }
+            }
+            oSend.onclick=function(){
+              if(oNoff){
+                oText.innerHTML="<div  class='clear' style=' background:url(img/cool.gif) right top no-repeat;line-height:24px;margin-bottom:10px;'>"+"<div style='background-color:#21c618;font-size:12px;color:#fff;float:right; margin-right:25px;padding:0 5px;'>"+oInp.value+"</div></div>"+oText.innerHTML;
+                 oInp.value="";
+              }
+            else{
+                oText.innerHTML="<div  class='clear' style=' background:url(img/soldier.gif) left top no-repeat;line-height:24px;margin-bottom:10px;position:relative;'>"+"<div style='background-color:#ded6e7;font-size:12px;color:#000;float:left; margin-left:26px;padding:0 5px;''>"+oInp.value+"</div></div>"+oText.innerHTML;
+                oInp.value="";
+              }
+            }
+
+          }
+        </script>
+       </head>
+       <body>
+          <section id="main">
+         <div id="text"></div>
+         <div >
+           <a id="look"><img src="img/cool.gif"></a>
+           <textarea  name="text" value="" id="inp"></textarea> 
+           <a id="send">发送</a>
+         </div>
+          </section>
+       </body>
+ </html>
