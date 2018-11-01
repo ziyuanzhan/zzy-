@@ -1,0 +1,267 @@
+ <!doctype html>
+ <html>
+       <head>
+       	<meta charset="utf-8">
+       	<title>
+       	</title>
+        <style type="text/css">
+          #box{
+            width: 255px;
+            height: 396px;
+            background-color: #dee7e7;
+            padding:0 7px 0 6px;
+            position: relative; 
+          }
+          h2{
+            margin:0;
+            display: inline-block;
+            font-size: 17px;
+            text-align: center;
+            line-height: 37px;
+            width: 146px;
+            height: 37px;
+            border-bottom: 1px solid #94bdd6;
+            font-weight: normal;
+          }
+          img{
+            border:0;
+            vertical-align: top;
+            position: absolute;
+            display: inline-block;
+            left: 8px;
+            top: 8px;
+            width: 17px;
+            height: 13px;
+          }
+          #all,#week{
+            display: none;
+          }
+          #nav{
+            padding:0;
+            margin: 0;
+            height: 25px;
+            position: absolute;
+            top: 12px;
+            left: 152px;
+          }
+          #nav li{
+            list-style: none;
+            float: left;
+            width: 35px;
+            height: 24px;
+            line-height: 24px;
+            text-align: center;
+            border-right:1px solid #94bdd6;
+            border-bottom:1px solid #94bdd6;
+            border-top:1px solid #94bdd6;
+            
+          }
+          .main ul{
+            padding:0;
+            margin:0;
+          }
+          .main li{
+            list-style: none;
+            height: 27px;
+            line-height: 27px;
+            padding-left: 37px;
+            overflow: hidden;
+            border-bottom: 1px dashed #fff;
+            background:8px 8px no-repeat;
+            position: relative;
+          }
+          #nav #frist{
+            border-left: 1px solid #94bdd6;
+            border-bottom:1px solid #fff;
+            background-color: #fff;
+          }
+         .main .hover{
+            list-style: none;
+            height: 79px;
+            border-bottom: 1px solid #fff;
+            background:8px 8px no-repeat;
+            position: relative;
+            display:none;
+            cursor: pointer;
+          }
+          .main .hover div{
+            position:absolute;
+            width: 84px;
+            height: 64px;
+            top: 7px;
+            left:35px;
+            border:1px solid #94bdd6;
+            background:url(img/hovershow.gif) no-repeat 2px 2px;
+          }
+          .main .hover p{
+            text-decoration: none;
+            display: inline-block;
+            height:108px;
+            height: 40px;
+            line-height: 20px;
+            font-size: 14px;
+            position: absolute;
+            top:10px;
+            left: 128px;
+            overflow: hidden;
+            margin:0;
+          }
+          .main .hover .play{
+            background-image: url(img/play.gif);
+            position: absolute;
+            top: 52px;
+            left: 207px;
+            width: 41px;
+            height: 21px;
+            border:0;
+          }
+        </style>
+        <script type="text/javascript">
+          window.onload=function(){
+            var oNav=document.getElementById("nav");
+            var oLi=oNav.getElementsByTagName("li");
+            var oUl=document.getElementsByTagName("ul");
+            var oDay=document.getElementById("day");
+            var oWeek=document.getElementById("week");
+            var oAll=document.getElementById("all");
+            var dImg=oDay.getElementsByTagName("img");
+            var wImg=oWeek.getElementsByTagName("img");
+            var aImg=oAll.getElementsByTagName("img");
+            var dIli=oDay.getElementsByClassName("index");
+            var dSli=oDay.getElementsByClassName("hover");
+            var wIli=oWeek.getElementsByClassName("index");
+            var wSli=oWeek.getElementsByClassName("hover");
+            var aIli=oAll.getElementsByClassName("index");
+            var aSli=oAll.getElementsByClassName("hover");
+            var arrImage=['img/1.gif','img/2.gif','img/3.gif','img/4.gif','img/5.gif','img/6.gif','img/7.gif','img/8.gif','img/9.gif','img/10.gif'];
+            img(dImg);
+            img(wImg);
+            img(aImg);
+            function img(image){
+              var a=(image.length-1)/2;
+              for(var i=0;i<a;i++){
+                image[2*i].src=arrImage[i];
+                image[2*i+1].src=arrImage[i];
+              }
+            }
+
+            for(var i=0;i<oLi.length;i++){
+              oLi[i].index=i;
+              oLi[i].onclick=function(){
+                for(var j=0;j<oLi.length;j++){
+                  oLi[j].style.background="#dee7e7";
+                  oLi[j].style.borderBottom="1px solid #94bdd6";
+                }
+                for(var k=0;k<oLi.length;k++){
+                  oUl[k+1].style.display="none";
+                }
+                oUl[this.index+1].style.display="block";
+                this.style.background="#fff";
+                this.style.borderBottom="1px solid #fff";
+              }  
+            }
+            lihover(dIli,dSli);
+            lihover(wIli,wSli);
+            lihover(aIli,aSli);
+            function lihover(list1,list2){
+              for(var i=0;i<list1.length;i++){
+                list1[i].index=i;
+                list1[i].onmouseover=function(){
+                  for(var j=0;j<list1.length;j++){
+                    list2[j].style.display="none";
+                    list1[j].style.display="list-item";
+                  }
+                  list1[this.index].style.display="none";
+                  list2[this.index].style.display="list-item";
+                  list2[this.index].style.backgroundColor="#fff";
+                } 
+              }
+            }
+        }
+        </script>
+       </head>
+       <body>
+          <div id="box">
+           <header>
+             <h2>观看排行榜</h2>
+             <ul id="nav">
+               <li id="frist">每日</li>
+               <li>每周</li>
+               <li >全部</li>
+             </ul>
+           </header>
+           <section class="main">
+             <ul id="day">
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈我是傻蛋</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+             </ul>
+           </section>
+             <section class="main">
+             <ul id="week">
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈李泽元</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+             </ul>
+           </section>
+           <section class="main">
+             <ul id="all">
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈李泽元是傻蛋</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+               <li class="index"><img src="">经典传奇：探索全世界重大历史事件</li>
+               <li class="hover"><img src=""><div></div><p>啊哈哈哈哈哈哈哈哈哈哈哈哈</p><div  class="play"></div></li>
+             </ul>
+           </section>
+          <div>
+       </body>
+ </html>
