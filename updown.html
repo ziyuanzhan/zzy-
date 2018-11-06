@@ -1,0 +1,108 @@
+ <!doctype html>
+ <html>
+       <head>
+       	<meta charset="utf-8">
+       	<title>
+       	</title>
+        <style type="text/css">
+        ul{
+          margin:0;
+          padding:0;
+        }
+        a{
+          text-decoration: none;
+          display: block;
+        }
+        li{
+          list-style: none;
+        }
+          .main{width: 168px;height: 461px;padding:8px 8px 0 8px;background-color: #f7f7f7;}
+          .content{overflow: hidden;}
+          .content .header{height: 24px;border-radius: 5px 5px 0 0;background-color: #294a73;font-size: 11px;color:#fff;padding: 0 10px;}
+          .content .header .header_1{float: left; line-height: 24px;}
+          .content .header .header_2{float: right;line-height: 24px;}
+          .content .body{width: 166px;height: 426px;border-left:1px solid #ced6d6;border-top:1px solid #ced6d6;border-right:1px solid #ced6d6;border-bottom:2px solid #ced6d6;border-radius: 0 0 5px 5px;position: relative;background-color: #fff;overflow: hidden;}
+          .content .body .up,.content .body .down{width: 166px;height: 22px;position:absolute;left:0;z-index:1;}
+          .content .body .up{background: #efefe7 url(img/up.gif) no-repeat 76px 4px;top: 0}
+          .content .body .down{background: #efefe7 url(img/down.gif) no-repeat 76px 4px;bottom: 0;}
+          .content .body ul{position: absolute;top:22px;z-index: 0}
+          .content .body li{height: 105px;}
+          .content .body #frist{height: 60px;padding-top: 20px;}
+          .content .body div{font-size: 8px;padding: 0 0 0 12px;}
+          .body li h2{font-size: 11px;border-top: 1px solid #c6c6ce;width: 142px;margin:0 12px;height: 34px;line-height: 34px;}
+          .content .body a{}
+          .body li img{float:right;margin-top: 15px;margin-right: 1px;}
+          .content .body #frist img{ margin-top: 10px;}
+        </style>
+        <script type="text/javascript">
+          window.onload=function(){
+            var oUp=document.getElementsByClassName("up");
+            var oDown=document.getElementsByClassName("down");
+            var oUl=document.getElementsByTagName("ul");
+            var oLi=document.getElementsByTagName("li");
+            var oImg=document.getElementsByTagName("img");
+            var arrPic=['img/save.gif','img/pic2.gif','img/pic3.gif','img/pic4.gif','img/pic5.gif','img/pic7.gif','img/pic8.gif'];
+            for(var i=1;i<oImg.length-1;i++){
+              oImg[i].src=arrPic[i-1];
+            }
+            var height1=-306;
+            var height2=21;
+            var timer1=null;
+            var timer2=null;
+            oUp[0].onmousedown=function(){
+              timer1=setInterval(up,15);
+              function up(){
+                if(oUl[0].offsetTop<height1){
+                  clearInterval(timer1);
+                } 
+                else{
+                  var top=oUl[0].offsetTop;
+                  oUl[0].offsetTop=top--;
+                  oUl[0].style.top=top+"px";
+                }
+              }      
+            }
+            oUp[0].onmouseup=function(){
+              clearInterval(timer1);
+            }
+            oDown[0].onmousedown=function(){
+              timer2=setInterval(down,15);
+              function down(){
+                if(oUl[0].offsetTop>height2){
+                  clearInterval(timer2);
+                } 
+                else{
+                  var top=oUl[0].offsetTop;
+                  oUl[0].offsetTop=top++;
+                  oUl[0].style.top=top+"px";
+                }
+              }
+                 
+            }
+            oDown[0].onmouseup=function(){
+              clearInterval(timer2);  
+            } 
+          }
+        </script>
+       </head>
+       <body>
+         <section class="main">
+           <div class="content">
+             <div class="header"><a class="header_1">秒味课堂</a><a class="header_2">>>更多</a></div>
+             <div class="body">
+               <a class="up"><img src=""></a>
+               <ul>
+               <li id="frist"><div><img src="">Mac翻新<br>新品iPod</div></li>
+               <li><h2>翻新笔记本</h2><div><img src="">RMB 5,788起<br>最多降了35%</div></li>
+               <li><h2>翻新笔记本</h2><div><img src="">RMB 5,788起<br>最多降了35%</div></li>
+               <li><h2>翻新笔记本</h2><div><img src="">RMB 5,788起<br>最多降了35%</div></li>
+               <li><h2>翻新笔记本</h2><div><img src="">RMB 5,788起<br>最多降了35%</div></li>
+               <li><h2>翻新笔记本</h2><div><img src="">RMB 5,788起<br>最多降了35%</div></li>
+               <li><h2>翻新笔记本</h2><div><img src="">RMB 5,788起<br>最多降了35%</div></li>
+             </ul>
+              <a class="down"><img src=""></a>
+             </div>
+           </div>
+         </section>
+       </body>
+ </html>

@@ -1,0 +1,163 @@
+ <!doctype html>
+ <html>
+       <head>
+       	<meta charset="utf-8">
+       	<title>
+       	</title>
+        <style type="text/css">
+          table{
+            border-collapse: collapse;
+          }
+          tr{
+            font-size: 12px;
+            border-top: 1px solid #fff;
+          }
+          input{
+            margin:0;
+            margin-left: 17px;
+          }
+          p{
+            display: inline-block;
+            margin:0;
+            font-size: 12px;
+            margin-left: 15px;
+            line-height: 33px;
+          }
+          a{
+            display: inline-block;
+            width: 35px;
+            height: 23px;
+            margin-left: 10px;
+            text-decoration: none;
+            border:1px solid #cecece;
+            border-radius: 3px;
+            text-align: top;
+            vertical-align: top;
+            margin-top: 5px;
+            padding-left: 30px;
+            font-size: 12px;
+            line-height: 25px
+          }
+          #selectall{
+            height:33px;
+            border-bottom:2px solid #4a4a4a;
+            width: 318px;
+            background:url("img/back.gif") repeat-x;
+          }
+          #love{
+            background:url("img/love.gif") 9px 6px no-repeat;
+            margin-left: 21px;
+          }
+          #add{
+            background:url("img/add.gif") 10px 6px no-repeat;
+          }
+          #x{
+            background:url("img/x.gif") 10px 6px no-repeat;
+          }
+        </style>
+        <script type="text/javascript">
+          window.onload=function(){
+            var oTd=document.getElementsByTagName("td");
+            var oTr=document.getElementsByTagName("tr");
+            var oInp=document.getElementsByTagName("input");
+            for(var i=0;i<oTd.length;i++){
+              var k=i%3
+              if(k==0){
+                oTd[i].width="45px";
+                oTd[i].height="30px";
+              }
+              else if(k==1){
+                oTd[i].width="163px";
+                oTd[i].height="30px";
+              }
+              else if(k==2){
+                oTd[i].width="104px";
+                oTd[i].height="30px";
+              }
+              
+            }
+            function change(){
+              for(var a=0;a<oTr.length;a++){
+              var j=a%2;
+              if(j==0&&!oInp[a].checked){
+                oTr[a].style.background="#f7ffff";
+              }
+              else if(j==0&&oInp[a].checked){
+                oTr[a].style.background="#efefef";
+              }
+              else if(j==1&&!oInp[a].checked){
+                oTr[a].style.background="#fff";
+              }
+              else
+                oTr[a].style.background="#efefef";
+              }
+            }
+            change();
+            for(var a=0;a<oTr.length;a++){
+              oTr[a].color=oTr[a].style.background;
+              oTr[a].index=a;
+              oTr[a].onmouseover=function(){
+                change();
+                oTr[this.index].style.background="#efefef";
+              }
+            }
+            var onOff=true;
+            oInp[oInp.length-1].onclick=function(){
+              if(onOff==true){
+                for(var i=0;i<oInp.length-1;i++){
+                  oInp[i].checked=true;
+                  onOff=false;
+                }
+              }
+              else{
+                for(var i=0;i<oInp.length-1;i++){
+                  oInp[i].checked=false;
+                  onOff=true;
+                }
+              }
+              change();
+            }
+          }     
+        </script>
+       </head>
+       <body>
+         <div>
+           <table>
+           <tr>
+             <td ><input type="checkbox" name="music"></td>
+             <td>私奔</td>
+             <td>梁博</td>
+           </tr>
+           <tr>
+             <td><input type="checkbox" name="music"></td>
+             <td>北京北京</td>
+             <td>梁博，黄勇</td>
+           </tr>
+           <tr>
+             <td><input type="checkbox" name="music"></td>
+             <td>我爱你中国</td>
+             <td>梁博</td>
+           </tr>
+           <tr>
+             <td><input type="checkbox" name="music"></td>
+             <td>花火</td>
+             <td>梁博</td>
+           </tr>
+           <tr>
+             <td><input type="checkbox" name="music"></td>
+             <td>回来</td>
+             <td>梁博</td>
+           </tr>
+           <tr>
+             <td><input type="checkbox" name="music"></td>
+             <td>爱要有你才完美</td>
+             <td>梁博，那英</td>
+           </tr>
+         </table>
+         <div id="selectall">
+           <input type="checkbox" name="selall"><p>全选</p><a id="love">喜欢</a><a id="add">添加</a><a id="x">删除</a>
+         </div>
+        </div>
+         
+       </body>
+ </html>
